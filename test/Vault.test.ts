@@ -14,6 +14,8 @@ describe("Vault", async () => {
         console.log(`${await v.getUnlockTime()}`);
 
         await v.setFeeAddress(AddressZero);
+
+        console.log(`${await v.getFeeAddress()}`);
     });
 });
 

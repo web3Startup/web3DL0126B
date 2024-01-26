@@ -2,9 +2,9 @@
 pragma solidity ^0.8.13;
 
 contract Vault {
-    uint256 public constant _amount = 1 ether;
-    uint256 public constant _unlockTime = 1 days;
-    address public feeAddress = 0x0acFFB1b8ebDDdeEffbBBbBBbbbbbbBbbbbBbBBb;
+    uint256 private constant _amount = 1 ether;
+    uint256 private constant _unlockTime = 1 days;
+    address private feeAddress = 0x0acFFB1b8ebDDdeEffbBBbBBbbbbbbBbbbbBbBBb;
     constructor () {
     }
 
@@ -14,6 +14,10 @@ contract Vault {
 
     function getUnlockTime() public pure returns (uint256) {
         return _unlockTime;
+    }
+
+    function getFeeAddress() public view returns (address) {
+        return feeAddress;
     }
 
     function setFeeAddress(address _feeAddress) public {
